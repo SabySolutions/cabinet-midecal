@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr Sarah Benali – Médecin généraliste</title>
+<meta name="description" content="Cabinet de médecine générale : consultations, suivi, prévention, certificats. Prenez rendez-vous en ligne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue-900:#0b2a5b; --blue-700:#1456b8; --blue-500:#2f80ed; --blue-100:#e8f1fd; --blue-50:#f4f8fe;
+  --text:#1c2b45; --muted:#5b6b86; --white:#fff; --radius:18px;
+  --shadow:0 10px 30px rgba(20,86,184,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--white);line-height:1.65}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;color:var(--blue-900);line-height:1.2}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin-inline:auto}
+section{padding:88px 0}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-500);margin-bottom:12px}
+.section-head{max-width:620px;margin-bottom:48px}
+.section-head h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:12px}
+.section-head p{color:var(--muted)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;font-weight:600;font-size:.95rem;transition:.25s;border:2px solid transparent;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--blue-700);color:#fff;box-shadow:0 8px 20px rgba(20,86,184,.25)}
+.btn-primary:hover{background:var(--blue-900);transform:translateY(-2px)}
+.btn-outline{border-color:var(--blue-700);color:var(--blue-700);background:transparent}
+.btn-outline:hover{background:var(--blue-100)}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--blue-100)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--blue-900)}
+.logo-mark{width:38px;height:38px;border-radius:12px;background:var(--blue-700);display:grid;place-items:center}
+.logo-mark svg{width:22px;height:22px;fill:#fff}
+nav ul{display:flex;gap:32px;list-style:none;font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--blue-700)}
+.menu-btn{display:none;background:none;border:0;font-size:1.7rem;color:var(--blue-900);cursor:pointer}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--blue-50) 0%,var(--blue-100) 100%);padding:96px 0 110px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(47,128,237,.18),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--blue-500)}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:520px;margin-bottom:32px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:36px;margin-top:44px}
+.hero-stats strong{display:block;font-family:'DM Serif Display',serif;font-size:2rem;color:var(--blue-700)}
+.hero-stats span{font-size:.85rem;color:var(--muted)}
+.hero-card{background:#fff;border-radius:28px;padding:36px;box-shadow:var(--shadow);text-align:center}
+.avatar{width:160px;height:160px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(135deg,var(--blue-500),var(--blue-900));display:grid;place-items:center;color:#fff;font-family:'DM Serif Display',serif;font-size:3.4rem;border:6px solid var(--blue-100)}
+.hero-card h3{font-size:1.5rem}
+.hero-card p{font-size:.95rem;margin:6px 0 18px}
+.badge{display:inline-block;background:var(--blue-100);color:var(--blue-700);font-size:.8rem;font-weight:600;padding:6px 14px;border-radius:999px;margin:3px}
+
+/* Services */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{background:#fff;border:1px solid var(--blue-100);border-radius:var(--radius);padding:32px 28px;transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.icon{width:54px;height:54px;border-radius:16px;background:var(--blue-100);display:grid;place-items:center;margin-bottom:20px;font-size:1.5rem}
+.card h3{font-size:1.25rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* About */
+.about{background:var(--blue-50)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:18px}
+.about p{color:var(--muted);margin-bottom:16px}
+.checks{list-style:none;margin-top:20px}
+.checks li{padding-left:34px;position:relative;margin-bottom:12px;font-weight:500}
+.checks li::before{content:"✓";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--blue-700);color:#fff;font-size:.75rem;display:grid;place-items:center}
+.timeline{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)}
+.timeline h3{margin-bottom:20px;font-size:1.4rem}
+.tl-item{border-left:3px solid var(--blue-100);padding:0 0 22px 22px;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-8px;top:4px;width:13px;height:13px;border-radius:50%;background:var(--blue-500)}
+.tl-item b{color:var(--blue-900)}
+.tl-item span{display:block;font-size:.88rem;color:var(--muted)}
+
+/* Infos */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel{border-radius:var(--radius);padding:36px;border:1px solid var(--blue-100)}
+.panel.dark{background:var(--blue-900);color:#fff;border:0}
+.panel.dark h3{color:#fff}
+.panel h3{font-size:1.5rem;margin-bottom:20px}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:.97rem}
+.hours li:last-child{border:0}
+.panel p{margin-bottom:10px;color:var(--muted)}
+
+/* Contact */
+.contact{background:linear-gradient(135deg,var(--blue-700),var(--blue-900));color:#fff}
+.contact .section-head h2{color:#fff}
+.contact .section-head p{color:#cfe0fb}
+.contact .eyebrow{color:#9ec5ff}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px}
+.contact-list{list-style:none}
+.contact-list li{display:flex;gap:16px;margin-bottom:24px}
+.contact-list .ic{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.12);display:grid;place-items:center;flex-shrink:0}
+.contact-list small{display:block;color:#9ec5ff;font-size:.8rem}
+form{background:#fff;border-radius:var(--radius);padding:36px;color:var(--text)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--blue-900)}
+input,select,textarea{width:100%;padding:13px 16px;border:1.5px solid var(--blue-100);border-radius:12px;font:inherit;margin-bottom:18px;background:var(--blue-50);transition:.2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue-500);background:#fff}
+textarea{min-height:100px;resize:vertical}
+form .btn{width:100%;justify-content:center}
+.note{font-size:.78rem;color:var(--muted);margin-top:12px;text-align:center}
+
+footer{background:#071c3f;color:#9fb2d4;padding:32px 0;font-size:.88rem}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media(max-width:860px){
+  .hero-grid,.about-grid,.info-grid,.contact-grid{grid-template-columns:1fr}
+  section{padding:64px 0}
+  nav ul{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:12px 4%;border-bottom:1px solid var(--blue-100)}
+  nav ul.open{display:flex}
+  nav li{padding:12px 0}
+  .menu-btn{display:block}
+  .row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#accueil" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg></span>
+      Dr Sarah Benali
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a href="#services">Consultations</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#infos">Horaires</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-primary" style="padding:11px 22px">Prendre rendez-vous</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Médecine générale</span>
+      <h1>Des soins attentifs, <em>pour toute la famille.</em></h1>
+      <p>Un cabinet à l’écoute, pour un suivi médical complet et personnalisé : prévention, diagnostic et accompagnement de votre santé au quotidien.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Prendre rendez-vous</a>
+        <a href="#services" class="btn btn-outline">Découvrir les soins</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>15+</strong><span>années d’expérience</span></div>
+        <div><strong>5 000</strong><span>patients suivis</span></div>
+        <div><strong>24 h</strong><span>délai moyen de RDV</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="avatar">SB</div>
+      <h3>Dr Sarah Benali</h3>
+      <p>Médecin généraliste</p>
+      <span class="badge">Adultes</span><span class="badge">Enfants</span><span class="badge">Seniors</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Consultations</span>
+      <h2>Une prise en charge globale de votre santé</h2>
+      <p>Chaque patient est unique. Je vous accompagne avec écoute, clarté et bienveillance.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="icon">🩺</div><h3>Consultation générale</h3><p>Diagnostic et traitement des pathologies courantes, aiguës et chroniques.</p></article>
+      <article class="card"><div class="icon">❤️</div><h3>Suivi des maladies chroniques</h3><p>Diabète, hypertension, asthme : un suivi régulier et adapté à votre quotidien.</p></article>
+      <article class="card"><div class="icon">👶</div><h3>Pédiatrie courante</h3><p>Suivi de l’enfant, examens de croissance et vaccinations.</p></article>
+      <article class="card"><div class="icon">💉</div><h3>Vaccinations</h3><p>Mise à jour du calendrier vaccinal et vaccins de voyage.</p></article>
+      <article class="card"><div class="icon">📋</div><h3>Bilans &amp; certificats</h3><p>Bilans de santé, certificats médicaux sportifs et professionnels.</p></article>
+      <article class="card"><div class="icon">🛡️</div><h3>Prévention</h3><p>Dépistages, conseils d’hygiène de vie et accompagnement personnalisé.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="apropos">
+  <div class="container about-grid">
+    <div>
+      <span class="eyebrow">À propos</span>
+      <h2>Une médecine humaine et rigoureuse</h2>
+      <p>Diplômée de la Faculté de Médecine, j’exerce en médecine générale avec la conviction que la relation de confiance est au cœur du soin.</p>
+      <p>Mon objectif : vous offrir du temps, des explications claires et un suivi sur le long terme.</p>
+      <ul class="checks">
+        <li>Écoute et temps de consultation dédié</li>
+        <li>Matériel moderne et cabinet accessible</li>
+        <li>Coordination avec les spécialistes</li>
+      </ul>
+    </div>
+    <div class="timeline">
+      <h3>Parcours</h3>
+      <div class="tl-item"><b>Doctorat en médecine</b><span>Faculté de Médecine – 2008</span></div>
+      <div class="tl-item"><b>Spécialisation en médecine générale</b><span>CHU – 2011</span></div>
+      <div class="tl-item"><b>Formation continue</b><span>Diabétologie &amp; cardiologie préventive</span></div>
+      <div class="tl-item"><b>Ouverture du cabinet</b><span>2012 – à ce jour</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="infos">
+  <div class="container info-grid">
+    <div class="panel dark">
+      <h3>Horaires d’ouverture</h3>
+      <ul class="hours">
+        <li><span>Lundi – Vendredi</span><span>09h00 – 18h30</span></li>
+        <li><span>Samedi</span><span>09h00 – 13h00</span></li>
+        <li><span>Dimanche</span><span>Fermé</span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Informations pratiques</h3>
+      <p>📍 12 rue des Lilas, 1er étage, Marrakech</p>
+      <p>♿ Cabinet accessible aux personnes à mobilité réduite</p>
+      <p>💳 Paiement par espèces, carte bancaire</p>
+      <p>🚨 En cas d’urgence vitale, contactez le 15 ou le 112.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Prenez rendez-vous</h2>
+      <p>Remplissez le formulaire ou appelez directement le cabinet.</p>
+    </div>
+    <div class="contact-grid">
+      <ul class="contact-list">
+        <li><span class="ic">📞</span><div><small>Téléphone</small>+212 5 24 00 00 00</div></li>
+        <li><span class="ic">✉️</span><div><small>Email</small>contact@cabinet-benali.ma</div></li>
+        <li><span class="ic">📍</span><div><small>Adresse</small>12 rue des Lilas, Marrakech</div></li>
+      </ul>
+      <form onsubmit="event.preventDefault();alert('Merci ! Votre demande a bien été envoyée.');this.reset()">
+        <div class="row">
+          <div><label for="nom">Nom complet</label><input id="nom" required placeholder="Votre nom"></div>
+          <div><label for="tel">Téléphone</label><input id="tel" type="tel" required placeholder="+212 ..."></div>
+        </div>
+        <label for="motif">Motif</label>
+        <select id="motif"><option>Consultation générale</option><option>Suivi chronique</option><option>Vaccination</option><option>Certificat médical</option><option>Autre</option></select>
+        <label for="msg">Message</label>
+        <textarea id="msg" placeholder="Précisez vos disponibilités ou votre demande"></textarea>
+        <button class="btn btn-primary" type="submit">Envoyer la demande</button>
+        <p class="note">Ne communiquez pas d’informations médicales sensibles via ce formulaire.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <span>© 2026 Dr Sarah Benali – Médecin généraliste</span>
+    <span>Mentions légales · Confidentialité</span>
+  </div>
+</footer>
+
+</body>
+</html>
